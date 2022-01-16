@@ -5,13 +5,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Livro;
 use Illuminate\Http\Request;
 
 class LivrosController extends Controller
 {
     public function index(){
         //dd('Teste');
-        $teste = 'Testando o template';
-        return view('home.index',['teste'=>$teste]);
+        $livros = Livro::all();
+        //dd($livros);
+        return view('home.index',['livros'=>$livros]);
     }
 }
