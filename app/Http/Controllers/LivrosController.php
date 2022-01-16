@@ -16,4 +16,13 @@ class LivrosController extends Controller
         //dd($livros);
         return view('home.index',['livros'=>$livros]);
     }
+
+    public function create(){
+        return view('home.create');
+    }
+
+    public function store(Request $request){
+        Livro::create($request->all());
+        return redirect()->route('home.index');
+    }
 }
