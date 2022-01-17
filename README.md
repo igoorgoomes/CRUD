@@ -5,4 +5,11 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 
 ## Requisitos - Deverá ter instalado em sua máquina
 
-- Composer [Link para instalação](https://getcomposer.org/download/)
+- Composer - [Link para instalação](https://getcomposer.org/download/)
+- Laravel - [Link para instalação](https://laravel.com/docs/8.x)
+- Servidor Localhost podendo ser o [Wamp](https://www.wampserver.com/en/) ou [Xampp](https://www.apachefriends.org/pt_br/index.html)
+
+## Como execultar o repositório em sistema local
+1. Faça um clone do projeto:
+-[HTTPS](https://github.com/igoorgoomes/CRUD.git)
+-[SSH](git@github.com:igoorgoomes/CRUD.git)
