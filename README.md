@@ -10,5 +10,6 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 - Servidor Localhost podendo ser o [Wamp](https://www.wampserver.com/en/) ou [Xampp](https://www.apachefriends.org/pt_br/index.html)
 
 ## Como execultar o repositório em sistema local
-1. Faça um clone do projeto no [link HTTPS](https://github.com/igoorgoomes/CRUD.git)
+1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git
+
 
