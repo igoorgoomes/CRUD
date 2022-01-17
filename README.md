@@ -24,4 +24,4 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 - Acesso pela porta serve laravel http://127.0.0.1:8000/livros
 - Acesso pela porta servido localhost http://localhost:8000/livros
 
-Obrigado por visitar meu projeto
+Obrigado por visitar meu projeto, em caso de dúvidas pode entrar contado pelo [Linkedin](https://www.linkedin.com/in/igor-gomes-de-brito/)
