@@ -5,4 +5,4 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 
 ## Requisitos - Deverá ter instalado em sua máquina
 
-- Composer [Link para instalação(https://getcomposer.org/download/)]
+- Composer [Link para instalação](https://getcomposer.org/download/)
