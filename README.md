@@ -12,7 +12,7 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 
 ## Como executar o repositório em sistema local
 1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git
-2. Abra o terminal de comandos e navega até a posta do projeto /CRUD
+2. Abra o terminal de comandos e navega até a pasta do projeto /CRUD
 3. Gere o arquivo **.env** manualmente com os seguintes comandos:
 - **cp .env.example .env**
 - **php artisan key:generate**
