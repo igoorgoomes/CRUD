@@ -10,7 +10,7 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 - Servidor Localhost podendo ser o [Wamp](https://www.wampserver.com/en/) ou [Xampp](https://www.apachefriends.org/pt_br/index.html)
 - npm - [Link ppara instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-## Como execultar o repositório em sistema local
+## Como executar o repositório em sistema local
 1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git
 2. Abra o terminal de comandos e navega até a posta do projeto /CRUD
 3. Gere o arquivo **.env** manualmente com os seguintes comandos:
