@@ -7,17 +7,35 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 
 - Composer - [Link para instalação](https://getcomposer.org/download/)
 - Laravel - [Link para instalação](https://laravel.com/docs/8.x)
-- Servidor Localhost podendo ser o [Wamp](https://www.wampserver.com/en/) ou [Xampp](https://www.apachefriends.org/pt_br/index.html)
+- Servidor Localhost podendo ser o [WampServe](https://www.wampserver.com/en/) ou [Xampp](https://www.apachefriends.org/pt_br/index.html)
 - npm - [Link ppara instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
+
 ## Como executar o repositório em sistema local
-1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git
-2. Abra o terminal de comandos e navega até a pasta do projeto /CRUD
-3. Gere o arquivo **.env** manualmente com os seguintes comandos:
-- **cp .env.example .env**
+1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git .
+2. Abra o terminal de comandos e navega até a pasta do projeto /CRUD .
+3. Execulte o seguinte comando no terminal **composer install --no-scripts**.
+4. Por padrão quando você clonar o projeto, o arquivo *.env* não estaram configurados.
+5. Agora vamos precisar gerar o arquivo **.env** manualmente  e após realizar a configuração do banco de dados dentro do arquivo criado. Vamos seguir com os seguintes comandos no terminal:
+- **cp .env.example .env** 
 - **php artisan key:generate**
-4. Configure seu banco de dados no arquivo **.env**
-5. Após a configuração, execulte o seguinte comando no terminal **php artisan migrate**
+- **code .** (Utilizar a IDE VSCode - abrindo o programa pelo terminal)
+6. *Nesse projeto foi utilizado o MySQL administrado pelo phpMyAdmin que já vem no WampServe, porém é importante criar um usuário e senha*, seguindo então com a configuração do banco de dados, vamos criar um usuário e senha dentro do phpMyAdmin:
+- Ao acessar o phpMyAdmin atrávez no Wampserve,podemos logar apenas com usuário root;
+- Agora na aba *User accounts*
+- Vamos em *New - Add user account* 
+- Informe o nome do usuário *user name* em *Host name* vamos colocar o parâmetro **local** e logo a frente **localhost**.
+- Defina uma senha em *Password*, logo abaixo a aba **Global privileges** marque o flex *Check all (para marca todos)*.
+**Agora temos um usuário para administrar o banco de dados, vamos continuar nossa configuração:** 
+7. Dentro no phpMyAdmin vamos na aba *SQL* e vamos executar os seguintes comandos:
+- **drop database livros;**
+- **create database livros;**
+- **use livros;** 
+8. Configurar o arquivo **.env**, em *DB_CONNECTION=mysql* vamos alterar as seguintes linhas:
+- **DB_HOST=127.0.0.1** alterar para **DB_HOST=localhost**.
+- **DB_PORT=3306** caso está linha já esteja na porta 3306, podemos manter nessa porta ou caso você esteja utilizando outra porta pode alterar esse 3306 para porta local que esteja usando, feito isso salve o arquivo **.env**.
+9. Agora vamos ajustar o arquivo **AppServiceProvider.php** no seguinte diretorio *App\Providers* logo abaixo da linha *use Illuminate\Support\ServiceProvider;* vamos incluir *use Illuminate\Support\Facades\Schema;* e também lá no final do arquivo temos a **public function boot()** dentro de {} deve colocar o seguinte comando *Schema::defaultStringLength(191);* feito essas duas inclusões, salve o arquivo **AppServiceProvider.php**.
+5. Após essas configurações, execulte o seguinte comando no terminal **php artisan migrate:fresh**
 6. Ainda no terminal vamos execultar o servidor laravel com seguinte comando **php artisan serve**
 7. Caso tenha clonado o projeto para dentro de servidor localhost lembre-se de validar se o serviço está ativo em sua máquina.
 8. Os endereços de navegação ficaram da seguinte forma:
