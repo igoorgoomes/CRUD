@@ -14,14 +14,14 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 ## Como executar o repositório em sistema local
 1. Faça um clone do projeto https://github.com/igoorgoomes/CRUD.git .
 2. Abra o terminal de comandos e navega até a pasta do projeto /CRUD .
-3. Execulte o seguinte comando no terminal **composer install --no-scripts**.
-4. Por padrão quando você clonar o projeto, o arquivo *.env* não estaram configurados.
-5. Agora vamos precisar gerar o arquivo **.env** manualmente  e após realizar a configuração do banco de dados dentro do arquivo criado. Vamos seguir com os seguintes comandos no terminal:
+3. Execute o seguinte comando no terminal **composer install --no-scripts**.
+4. Por padrão quando você clonar o projeto, o arquivo *.env* é apenas um arquivo exemplo.
+5. Agora vamos precisar gerar o arquivo **.env** manualmente seguindo com os seguintes comandos no terminal:
 - **cp .env.example .env** 
 - **php artisan key:generate**
-- **code .** (Utilizar a IDE VSCode - abrindo o programa pelo terminal)
-6. *Nesse projeto foi utilizado o MySQL administrado pelo phpMyAdmin que já vem no WampServe, porém é importante criar um usuário e senha*, seguindo então com a configuração do banco de dados, vamos criar um usuário e senha dentro do phpMyAdmin:
-- Ao acessar o phpMyAdmin atrávez no Wampserve,podemos logar apenas com usuário root;
+- **code .** (Utilizei a IDE VSCode - abrindo o programa pelo terminal)
+6. *Nesse projeto foi utilizado o MySQL administrado pelo phpMyAdmin que já vem no WampServe e também no Xampp  , porém é importante criar um usuário e senha*, seguindo então com a configuração do banco de dados, vamos criar um usuário e senha dentro do phpMyAdmin:
+- Ao acessar o phpMyAdmin atrávez do Wampserve ou Xampp,podemos logar apenas com usuário root;
 - Agora na aba *User accounts*
 - Vamos em *New - Add user account* 
 - Informe o nome do usuário *user name* em *Host name* vamos colocar o parâmetro **local** e logo a frente **localhost**.
@@ -34,6 +34,7 @@ Simples CRUD, listando alguns livros para desenvolvedores. Para rodar esse repos
 8. Configurar o arquivo **.env**, em *DB_CONNECTION=mysql* vamos alterar as seguintes linhas:
 - **DB_HOST=127.0.0.1** alterar para **DB_HOST=localhost**.
 - **DB_PORT=3306** caso está linha já esteja na porta 3306, podemos manter nessa porta ou caso você esteja utilizando outra porta pode alterar esse 3306 para porta local que esteja usando, feito isso salve o arquivo **.env**.
+- **DB_DATABASE=crud** alterar para **DB_DATABASE=livros**.  
 9. Agora vamos ajustar o arquivo **AppServiceProvider.php** no seguinte diretorio *App\Providers* logo abaixo da linha *use Illuminate\Support\ServiceProvider;* vamos incluir *use Illuminate\Support\Facades\Schema;* e também lá no final do arquivo temos a **public function boot()** dentro de {} deve colocar o seguinte comando *Schema::defaultStringLength(191);* feito essas duas inclusões, salve o arquivo **AppServiceProvider.php**.
 5. Após essas configurações, execulte o seguinte comando no terminal **php artisan migrate:fresh**
 6. Ainda no terminal vamos execultar o servidor laravel com seguinte comando **php artisan serve**
