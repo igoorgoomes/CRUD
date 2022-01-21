@@ -12,6 +12,8 @@ Route::prefix('livros')->group(function(){
     Route::delete('/{id}',[LivrosController::class,'destroy'])->where('id','[0-9]+')->name('livros.destroy');
 });
 
+Route::get('/',[LivrosController::class,'index'])->name('livros.index');
+
 Route::fallback(function(){
     return "404 - Not Found";
 });
